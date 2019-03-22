@@ -6,11 +6,12 @@ class User < ApplicationRecord
     uniqueness: { case_sensitive: false }
 
   has_secure_password
+  validates :password, presence: true, length: { minimum: 6 }
 
   private
 
     def lowercase_email
       self.email.downcase!
     end
-    
+
 end
