@@ -1,0 +1,11 @@
+<h1>All Posts</h1>
+
+<%= link_to "Write new post", new_post_path %><br><br>
+
+<% @posts.each do |post| %>
+  <p>Title: <%= post.title %></p>
+  <% if cookies[:remember_token] %>
+    <p>Author: <%= User.find(post.user_id).name %></p>
+  <% end %>
+  <p>Body: <%= post.body %></p><br><br>
+<% end %>

@@ -11,9 +11,6 @@ class ApplicationController < ActionController::Base
     if cookies[:remember_token]
       user_digest = Digest::SHA1.hexdigest(cookies[:remember_token])
       user ||= User.find_by(remember_digest: user_digest)
-      if user
-        user
-      end
     else
       nil
     end
@@ -23,6 +20,13 @@ class ApplicationController < ActionController::Base
     cookies.delete(:remember_token)
     @current_user = nil
     user.update_attribute(:remember_digest, nil)
+  end
+
+  def signed_in
+    unless current_user
+      flash[:danger] = "You must be signed in."
+      redirect_to root_url
+    end
   end
 
 end

@@ -15,7 +15,13 @@
         <%= link_to "Sign in", new_session_path %>
         <%= link_to "Sign out", signout_path, method: :delete %>
       </nav>
-    </header>
+    </header><br>
+
+    <div class="container">
+      <% flash.each do |msg_type, msg| %>
+        <%= msg %>
+      <% end %>
+    </div>
 
     <%= yield %>
   </body>

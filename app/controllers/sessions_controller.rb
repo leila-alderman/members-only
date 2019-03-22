@@ -7,11 +7,13 @@ class SessionsController < ApplicationController
     if @user.authenticate(params[:session][:password])
       sign_in(@user)
     end
+    redirect_to posts_path
   end
 
   def destroy
     @user = current_user
     sign_out(@user)
+    redirect_to posts_path
   end
 
 end
