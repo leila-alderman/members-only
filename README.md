@@ -1,24 +1,6 @@
-# README
+# Members only!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This Rails app allows users to write posts that appear anonymous to non-members. The authentication used in this app is created without the use of any gems, instead focusing on thoroughly understanding the basic steps of authentication.
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[This project](https://www.theodinproject.com/courses/ruby-on-rails/lessons/authentication#project-2-members-only) is part of [The Odin Project](https://www.theodinproject.com) curriculum.
