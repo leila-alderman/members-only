@@ -17,9 +17,8 @@ class ApplicationController < ActionController::Base
   end
 
   def sign_out(user)
-    cookies.delete(:remember_token)
-    @current_user = nil
     user.update_attribute(:remember_digest, nil)
+    cookies.delete(:remember_token)
   end
 
   def signed_in

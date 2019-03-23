@@ -12,8 +12,8 @@ class SessionsController < ApplicationController
 
   def destroy
     @user = current_user
-    sign_out(@user)
-    redirect_to posts_path
+    sign_out(@user) if @user
+    redirect_to new_session_path
   end
 
 end
